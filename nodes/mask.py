@@ -1,6 +1,5 @@
 import comfy.utils
 from PIL import Image
-from rembg import remove
 
 from ..utils import pil2tensor, tensor2pil
 
@@ -64,6 +63,7 @@ class ImageRemoveBackgroundRembg:
         post_process_mask,
         bgcolor,
     ):
+        from rembg import remove
         pbar = comfy.utils.ProgressBar(image.size(0))
         images = tensor2pil(image)
 
