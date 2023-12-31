@@ -230,17 +230,17 @@ here = Path(__file__).parent.absolute()
 comfy_dir = Path(folder_paths.base_path)
 models_dir = Path(folder_paths.models_dir)
 output_dir = Path(folder_paths.output_directory)
-styles_dir = comfy_dir / "styles"
+styles_dir = here / "styles"
 session_id = str(uuid.uuid4())
 # - Construct the path to the font file
 font_path = here / "font.ttf"
 
 # - Add extern folder to path
-extern_root = here / "extern"
-add_path(extern_root)
-for pth in extern_root.iterdir():
-    if pth.is_dir():
-        add_path(pth)
+# extern_root = here / "extern"
+# add_path(extern_root)
+# for pth in extern_root.iterdir():
+#     if pth.is_dir():
+#         add_path(pth)
 
 # - Add the ComfyUI directory and custom nodes path to the sys.path list
 add_path(comfy_dir)

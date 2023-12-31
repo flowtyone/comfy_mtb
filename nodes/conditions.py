@@ -124,7 +124,7 @@ class SmartStep:
 
 
 def install_default_styles(force=False):
-    styles_dir = Path(folder_paths.base_path) / "styles"
+    styles_dir = here / "styles"
     styles_dir.mkdir(parents=True, exist_ok=True)
     default_style = here / "styles.csv"
     dest_style = styles_dir / "default.csv"
@@ -144,7 +144,7 @@ class StylesLoader:
     @classmethod
     def INPUT_TYPES(cls):
         if not cls.options:
-            input_dir = Path(folder_paths.base_path) / "styles"
+            input_dir = here / "styles"
             if not input_dir.exists():
                 install_default_styles()
 
